@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script>
+        window.onload=function () {
+            //获取元素
+            var divide = document.getElementById("/");
+            var seven = document.getElementById("7");
+            var eight = document.getElementById("8");
+            var nine = document.getElementById("9");
+            var mul = document.getElementById("*");
+            var four = document.getElementById("4");
+            var five = document.getElementById("5");
+            var six = document.getElementById("6");
+            var minus = document.getElementById("-");
+            var one = document.getElementById("1");
+            var two = document.getElementById("2");
+            var three = document.getElementById("3");
+            var sum = document.getElementById("+");
+            var clear = document.getElementById("C");
+            var zero = document.getElementById("0");
+            var point = document.getElementById(".");
+            var equal = document.getElementById("=");
+            var show = document.getElementById("show");
+
+            //显示器显示计算字符串
+            function showStr(str) {
+                show.innerHTML=str;
+            }
+
+            //计算字符串
+            var str = "";
+
+            //数字
+            zero.onclick=function(){
+                str += "0";
+                showStr(str);
+            }
+            one.onclick=function () {
+                str += "1";
+                showStr(str);
+            }
+            two.onclick = function () {
+                str += "2";
+                showStr(str);
+            }
+            three.onclick = function () {
+                str += "3";
+                showStr(str);
+            }
+            four.onclick = function () {
+                str += "4";
+                showStr(str);
+            }
+            five.onclick = function () {
+                str += "5";
+                showStr(str);
+            }
+            six.onclick = function () {
+                str += "6";
+                showStr(str);
+            }
+            seven.onclick = function () {
+                str += "7";
+                showStr(str);
+            }
+            eight.onclick = function () {
+                str += "8";
+                showStr(str);
+            }
+            nine.onclick = function () {
+                str += "9";
+                showStr(str);
+            }
+
+            //小数点
+            point.onclick = function(){
+                str += ".";
+                showStr(str);
+            }
+
+            //加减乘除
+            sum.onclick=function () {
+                str += "+";
+                showStr(str);
+            }
+            minus.onclick=function(){
+                str += "-";
+                showStr(str);
+            }
+            mul.onclick=function(){
+                str += "*";
+                showStr(str);
+            }
+            divide.onclick=function(){
+                str += "/";
+                showStr(str);
+            }
+
+            //等号
+            equal.onclick=function(){
+                str += "="+eval(str);
+                showStr(str)
+                str = "";
+            }
+            //清除
+            clear.onclick=function(){
+                str = "";
+                showStr(str);
+            }
+
+
+
+        }
+    </script>
+    <style>
+        td{
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        }
+
+        #show{
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+
+        #calc{
+            font-size: 30px;
+            font-weight: bold;
+            background-color: gray;
+            color: white;
+        }
+        input{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td colspan="4" id="calc">计算器</td>
+        </tr>
+        <tr>
+            <td colspan="3" id="show">显示屏</td>
+            <td id="/"><input type="button" value="/"></td>
+        </tr>
+        <tr>
+            <td id="7"><input type="button" value="7"></td>
+            <td id="8"><input type="button" value="8"></td>
+            <td id="9"><input type="button" value="9"></td>
+            <td id="*"><input type="button" value="*"></td>
+        </tr>
+        <tr>
+            <td id="4"><input type="button" value="4"></td>
+            <td id="5"><input type="button" value="5"></td>
+            <td id="6"><input type="button" value="6"></td>
+            <td id="-"><input type="button" value="-"></td>
+        </tr>
+        <tr>
+            <td id="1"><input type="button" value="1"></td>
+            <td id="2"><input type="button" value="2"></td>
+            <td id="3"><input type="button" value="3"></td>
+            <td id="+"><input type="button" value="+"></td>
+        </tr>
+        <tr>
+            <td id="C"><input type="button" value="C"></td>
+            <td id="0"><input type="button" value="0"></td>
+            <td id="."><input type="button" value="."></td>
+            <td id="="><input type="button" value="="></td>
+        </tr>
+    </table>
+</body>
+</html>

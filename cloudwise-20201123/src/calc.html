@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <script src="jquery-3.4.1.js"></script>
+    <script>
+        $(function () {
+            //设置初始字符串
+            let str = "";
+            //获取input按钮
+            let $input = $("input");
+            //点击input按钮事件
+            $input.click(function () {
+                //获取该按钮元素
+                let $this = $(this);
+                //在显示器上展示
+                showStr(str);
+                switch ($this.val()) {
+                    //如果该按钮的值等于 “=”
+                    case "=":
+                        //进行计算
+                        str += "="+eval(str);
+                        showStr(str)
+                        str = "";
+                        break;
+                    //如果该按钮的值等于“C”
+                    case "C":
+                        //清空
+                        str = "";
+                        showStr(str);
+                        break;
+                    default:
+                        str += $this.val();
+                        showStr(str);
+                }
+            });
+
+            //显示器显示计算字符串
+            function showStr(str) {
+                $("#show").html(str);
+            }
+        });
+    </script>
+    <style>
+        td{
+            text-align: center;
+            width: 100px;
+            height: 100px;
+        }
+
+        #show{
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+
+        #calc{
+            font-size: 30px;
+            font-weight: bold;
+            background-color: gray;
+            color: white;
+        }
+        input{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<table border="1px">
+    <tr>
+        <td colspan="4" id="calc">计算器</td>
+    </tr>
+    <tr>
+        <td colspan="3" id="show">显示屏</td>
+        <td><input type="button" value="/"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="7"></td>
+        <td><input type="button" value="8"></td>
+        <td><input type="button" value="9"></td>
+        <td><input type="button" value="*"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="4"></td>
+        <td><input type="button" value="5"></td>
+        <td><input type="button" value="6"></td>
+        <td><input type="button" value="-"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="1"></td>
+        <td><input type="button" value="2"></td>
+        <td><input type="button" value="3"></td>
+        <td><input type="button" value="+"></td>
+    </tr>
+    <tr>
+        <td><input id="clear" type="button" value="C"></td>
+        <td><input type="button" value="0"></td>
+        <td><input type="button" value="."></td>
+        <td><input id="equal" type="button" value="="></td>
+    </tr>
+</table>
+</body>
+</html>

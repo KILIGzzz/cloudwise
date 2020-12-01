@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201120/cloudwise-20201120.iml" filepath="$PROJECT_DIR$/cloudwise-20201120/cloudwise-20201120.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201120-calculator/cloudwise-20201120-calculator.iml" filepath="$PROJECT_DIR$/cloudwise-20201120-calculator/cloudwise-20201120-calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201123/cloudwise-20201123.iml" filepath="$PROJECT_DIR$/cloudwise-20201123/cloudwise-20201123.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201124/cloudwise-20201124.iml" filepath="$PROJECT_DIR$/cloudwise-20201124/cloudwise-20201124.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201125/cloudwise-20201125.iml" filepath="$PROJECT_DIR$/cloudwise-20201125/cloudwise-20201125.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201126/cloudwise-20201126.iml" filepath="$PROJECT_DIR$/cloudwise-20201126/cloudwise-20201126.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201127/cloudwise-20201127.iml" filepath="$PROJECT_DIR$/cloudwise-20201127/cloudwise-20201127.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201130/cloudwise-20201130.iml" filepath="$PROJECT_DIR$/cloudwise-20201130/cloudwise-20201130.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201201/cloudwise-20201201.iml" filepath="$PROJECT_DIR$/cloudwise-20201201/cloudwise-20201201.iml" />
+    </modules>
+  </component>
+</project>
