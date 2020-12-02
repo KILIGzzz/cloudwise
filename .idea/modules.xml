@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/cloudwise-20201127/cloudwise-20201127.iml" filepath="$PROJECT_DIR$/cloudwise-20201127/cloudwise-20201127.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloudwise-20201130/cloudwise-20201130.iml" filepath="$PROJECT_DIR$/cloudwise-20201130/cloudwise-20201130.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloudwise-20201201/cloudwise-20201201.iml" filepath="$PROJECT_DIR$/cloudwise-20201201/cloudwise-20201201.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-typescript/cloudwise-typescript.iml" filepath="$PROJECT_DIR$/cloudwise-typescript/cloudwise-typescript.iml" />
     </modules>
   </component>
 </project>
