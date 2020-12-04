@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cloudwise-20201205-login:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/cloudwise_20201205_login_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="cloudwise-20201205-login/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cloudwise-20201205-login" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
