@@ -22,9 +22,18 @@
 </head>
 <body>
 <%
-    Object username = session.getAttribute("username");
-    if (username != null){
-        request.getRequestDispatcher("/userServlet").forward(request,response);
+//    Object username = session.getAttribute("username");
+//    if (username != null){
+//        request.getRequestDispatcher("/userServlet").forward(request,response);
+//    }
+
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null&&cookies.length>0){
+        for (Cookie cookie : cookies) {
+            if ("username".equals(cookie.getName())) {
+                request.getRequestDispatcher("/userServlet").forward(request,response);
+            }
+        }
     }
 %>
 <h1 style="text-align: center">用户登录页面</h1>
@@ -44,6 +53,11 @@
             </tr>
             <tr>
                 <td colspan="2" style="text-align: center"><input type="submit" value="登录"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" name="login" value="login">两周之内免登陆
+                </td>
             </tr>
         </table>
     </form>
