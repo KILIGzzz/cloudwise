@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
         //判断有没有从数据库查到数据
         if (byUser == null || byUser.size() == 0){
             System.out.println("登录失败");
+            req.getSession().setAttribute("username",username);
             req.setAttribute("msg","用户名或密码错误，请重新登录！");
             req.getRequestDispatcher("/login.jsp").forward(req,resp);
         }else {
