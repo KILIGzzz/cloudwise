@@ -41,20 +41,22 @@ public class LoginServlet extends HttpServlet {
             req.getRequestDispatcher("/login.jsp").forward(req,resp);
         }else {
             System.out.println("登录成功");
-            String login = req.getParameter("login");
-            if (login!=null){
-                //将登陆的用户名存入cookie
-                Cookie cookie = new Cookie("username",username);
-                cookie.setMaxAge(60*60*24*7);
-                resp.addCookie(cookie);
-            }
+//            String login = req.getParameter("login");
+//            if (login!=null){
+//                //将登陆的用户名存入cookie
+//                Cookie cookie = new Cookie("username",username);
+//                cookie.setMaxAge(60*60*24*7);
+//                resp.addCookie(cookie);
+//            }
 
-//            //将登陆的用户名存入session
-//            req.getSession().setAttribute("username",username);
+            //将登陆的用户名存入session
+            req.getSession().setAttribute("username",username);
 
             String usernameInfo = "欢迎您，"+username+"!";
             req.setAttribute("usernameInfo",usernameInfo);
-            req.getRequestDispatcher("/userServlet").forward(req,resp);
+//            req.getRequestDispatcher("/userServlet").forward(req,resp);
+            //重定向
+            resp.sendRedirect(req.getContextPath()+"/userServlet");
         }
 
     }

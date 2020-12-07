@@ -1,4 +1,4 @@
-<%--
+<%@ page import="listener.CountListener" %><%--
   Created by IntelliJ IDEA.
   User: KILIG
   Date: 2020/12/4
@@ -24,7 +24,7 @@
 <body>
     <h1 style="text-align: center">用户信息管理系统</h1>
     <table class="table" border="1px">
-        <caption style="color: green">${usernameInfo}</caption>
+        <caption style="color: green">${usernameInfo}   当前在线人数：<%=CountListener.count%>人</caption>
         <thead style="background-color: aqua">
         <tr>
             <td>
@@ -62,8 +62,10 @@
                 </td>
             </tr>
         </c:forEach>
-        <td colspan="7" style="text-align: center"><a
-                href="${pageContext.request.contextPath}/userServlet?method=toAdd">添加</a></td>
+        <td colspan="7" style="text-align: center">
+            <a href="${pageContext.request.contextPath}/userServlet?method=toAdd">添加</a>
+            <a href="${pageContext.request.contextPath}/logoutServlet">注销</a>
+        </td>
 
         </tbody>
     </table>
