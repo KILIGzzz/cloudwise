@@ -21,7 +21,7 @@ public class CountListener implements HttpSessionAttributeListener {
         //获取添加的session名称
         String name = httpSessionBindingEvent.getName();
         //如果添加的session名是username
-        if (username.equals(name)){
+        if (username.equals(name)) {
             count++;
         }
     }
@@ -31,7 +31,7 @@ public class CountListener implements HttpSessionAttributeListener {
         //获取删除的session名称
         String name = httpSessionBindingEvent.getName();
         //如果删除的session名是username
-        if (username.equals(name)){
+        if (username.equals(name)) {
             count--;
         }
 
