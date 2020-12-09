@@ -4,6 +4,8 @@
     <file type="web" url="file://$PROJECT_DIR$/../cloudwise-20201208" />
     <file type="web" url="file://$PROJECT_DIR$/cloudwise-20201208" />
     <file type="web" url="file://$PROJECT_DIR$/cloudwise-20201208-work" />
+    <file type="web" url="file://$PROJECT_DIR$/cloudwise-20201209" />
+    <file type="web" url="file://$PROJECT_DIR$/cloudwise-20201209-work" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -11,6 +13,8 @@
         <option value="$PROJECT_DIR$/../cloudwise-20201208/pom.xml" />
         <option value="$PROJECT_DIR$/cloudwise-20201208/pom.xml" />
         <option value="$PROJECT_DIR$/cloudwise-20201208-work/pom.xml" />
+        <option value="$PROJECT_DIR$/cloudwise-20201209/pom.xml" />
+        <option value="$PROJECT_DIR$/cloudwise-20201209-work/pom.xml" />
       </list>
     </option>
   </component>

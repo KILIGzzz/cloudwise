@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cloudwise.dao.PersonDao">
+    <select id="findAllPerson" resultType="java.util.Map">
+        select p.*,a.areaname from personinfo p inner  join areainfo a on p.personareaid=a.areaid
+    </select>
+
+    <select id="findAllPersonPage" parameterType="int" resultType="java.util.Map">
+        select p.*,a.areaname from personinfo p inner  join areainfo a on p.personareaid=a.areaid limit  #{param1},#{param2}
+    </select>
+    <select id="findAllArea" resultType="java.util.Map">
+        select * from areainfo
+    </select>
+    <update id="updatePersonInfo" parameterType="string">
+        update personinfo set personname=#{param2},personareaid=#{param3},personage=#{param4},personaddress=#{param5} where personid=#{param1}
+    </update>
+    <delete id="deletePersonById" parameterType="string">
+        delete from personinfo where personid=#{personId}
+    </delete>
+    <select id="findPersonById" parameterType="string" resultType="java.util.Map">
+        select * from personinfo where personid=#{personid}
+    </select>
+    <select id="getRowCount" resultType="long">
+        select count(*)  mycount from personinfo
+    </select>
+    <select id="checkPersonName" parameterType="string" resultType="java.util.Map">
+        select personid from personinfo where personname=#{personName}
+    </select>
+
+</mapper>

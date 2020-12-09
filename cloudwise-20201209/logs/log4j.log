@@ -1,0 +1,24 @@
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:15:43][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG] [2020-12-09 18:15:44][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 843467284.
+[DEBUG] [2020-12-09 18:15:44][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@32464a14]
+[DEBUG] [2020-12-09 18:15:44][Ivancom.Ivan.dao.UserDao.findById]==>  Preparing: select id, username, password, phone, deptid, createtime from usersinfo where id = ?
+[DEBUG] [2020-12-09 18:15:44][Ivancom.Ivan.dao.UserDao.findById]==> Parameters: 1(Integer)
+[DEBUG] [2020-12-09 18:15:44][Ivancom.Ivan.dao.UserDao.findById]<==      Total: 1
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.logging.LogFactory]Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.datasource.pooled.PooledDataSource]PooledDataSource forcefully closed/removed all connections.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Opening JDBC Connection
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.datasource.pooled.PooledDataSource]Created connection 843467284.
+[DEBUG] [2020-12-09 18:23:25][org.apache.ibatis.transaction.jdbc.JdbcTransaction]Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@32464a14]
+[DEBUG] [2020-12-09 18:23:25][Ivancom.Ivan.dao.UserDao.findById]==>  Preparing: select id, username, password, phone, deptid, createtime from usersinfo where id = ?
+[DEBUG] [2020-12-09 18:23:25][Ivancom.Ivan.dao.UserDao.findById]==> Parameters: 1(Integer)
+[DEBUG] [2020-12-09 18:23:25][Ivancom.Ivan.dao.UserDao.findById]<==      Total: 1
