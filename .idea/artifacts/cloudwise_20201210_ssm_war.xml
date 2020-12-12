@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cloudwise-20201210-ssm:war">
+    <output-path>$PROJECT_DIR$/cloudwise-20201210-ssm/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cloudwise-20201210-ssm</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cloudwise-20201210-ssm.war">
+      <element id="artifact" artifact-name="cloudwise-20201210-ssm:war exploded" />
+    </root>
+  </artifact>
+</component>

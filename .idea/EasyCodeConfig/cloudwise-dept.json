@@ -1,0 +1,31 @@
+{
+  "name" : "Dept",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "deptid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "dname",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "loc",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.Ivan",
+  "savePath" : "./cloudwise20201211/cloudwise-20201211/src/main/java/com/Ivan",
+  "saveModelName" : "cloudwise-20201211"
+}

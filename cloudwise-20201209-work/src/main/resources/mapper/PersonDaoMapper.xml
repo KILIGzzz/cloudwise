@@ -29,4 +29,17 @@
         select personid from personinfo where personname=#{personName}
     </select>
 
+    <!--课前测-->
+    <select id="findEmp" resultType="java.util.Map" parameterType="cloudwise.entity.Sal">
+        select * from emp
+        <where>
+            <if test="a != null and a != '' ">
+                and sal > #{a}
+            </if>
+            <if test="b != null and b != '' ">
+                and sal &lt; #{b}
+            </if>
+        </where>
+    </select>
+
 </mapper>

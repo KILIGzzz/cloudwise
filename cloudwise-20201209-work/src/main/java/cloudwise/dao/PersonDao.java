@@ -1,4 +1,6 @@
 package cloudwise.dao;
+import cloudwise.entity.Sal;
+
 import java.util.List;
 import java.util.Map;
 
@@ -13,5 +15,5 @@ public interface PersonDao {
     long getRowCount();
     Map<String,Object> checkPersonName(String personName);
 
-
+    List<Map<String,Object>> findEmp(Sal sal);
 }

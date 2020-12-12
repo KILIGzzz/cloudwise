@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cloudwise-20201211-test:war">
+    <output-path>$PROJECT_DIR$/cloudwise-20201211-test/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>cloudwise-20201211-test</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cloudwise-20201211-test.war">
+      <element id="artifact" artifact-name="cloudwise-20201211-test:war exploded" />
+    </root>
+  </artifact>
+</component>

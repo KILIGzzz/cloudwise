@@ -3,9 +3,6 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--<typeAliases>-->
-    <!--    <typeAlias type="cloudwise.entity.PageBean" alias="pInfo"/>-->
-    <!--</typeAliases>-->
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
@@ -19,6 +16,6 @@
     </environments>
     <!--    映射文件-->
     <mappers>
-        <mapper resource="mapper/PersonDaoMapper.xml"/>
+        <mapper resource="mapper/xxxxxx.xml"/>
     </mappers>
 </configuration>

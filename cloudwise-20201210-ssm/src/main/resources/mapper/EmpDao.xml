@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Ivan.dao.EmpDao">
+
+    <resultMap type="com.Ivan.entity.Emp" id="EmpMap">
+        <result property="empno" column="EMPNO" jdbcType="INTEGER"/>
+        <result property="ename" column="ENAME" jdbcType="VARCHAR"/>
+        <result property="job" column="JOB" jdbcType="VARCHAR"/>
+        <result property="mgr" column="MGR" jdbcType="INTEGER"/>
+        <result property="hiredate" column="HIREDATE" jdbcType="TIMESTAMP"/>
+        <result property="sal" column="SAL" jdbcType="NUMERIC"/>
+        <result property="comm" column="COMM" jdbcType="NUMERIC"/>
+        <result property="deptno" column="DEPTNO" jdbcType="INTEGER"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.Ivan.entity.Emp">
+        insert into emp values (#{empno},#{ename},#{job},#{mgr},now(),#{sal},#{comm},#{deptno})
+    </insert>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="EmpMap">
+        select
+          EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
+        from cloudwise.emp
+        where EMPNO = #{empno}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="EmpMap">
+        select
+          EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
+        from cloudwise.emp
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="EmpMap">
+        select
+          EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO
+        from cloudwise.emp
+        <where>
+            <if test="empno != null">
+                and EMPNO = #{empno}
+            </if>
+            <if test="ename != null and ename != ''">
+                and ENAME = #{ename}
+            </if>
+            <if test="job != null and job != ''">
+                and JOB = #{job}
+            </if>
+            <if test="mgr != null">
+                and MGR = #{mgr}
+            </if>
+            <if test="hiredate != null">
+                and HIREDATE = #{hiredate}
+            </if>
+            <if test="sal != null">
+                and SAL = #{sal}
+            </if>
+            <if test="comm != null">
+                and COMM = #{comm}
+            </if>
+            <if test="deptno != null">
+                and DEPTNO = #{deptno}
+            </if>
+        </where>
+    </select>
+    <!--查询所有-->
+    <select id="findAll" resultType="com.Ivan.entity.EmpDept" parameterType="map">
+        select e.*,d.dname from emp e inner join dept d on e.DEPTNO = d.deptid limit  #{start},#{pageSize}
+    </select>
+    <!--一共多少条数据-->
+    <select id="totalCount" resultType="java.lang.Integer">
+        select count(*) from emp
+    </select>
+
+    <!--找到所有工作-->
+    <select id="findJob" resultType="java.lang.String">
+        select JOB from emp group by JOB
+    </select>
+
+    <!--找到所有部门-->
+    <select id="findDept" resultType="com.Ivan.entity.Dept">
+        select deptid,dname from dept group by dname;
+    </select>
+
+
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update cloudwise.emp
+        <set>
+            <if test="ename != null and ename != ''">
+                ENAME = #{ename},
+            </if>
+            <if test="job != null and job != ''">
+                JOB = #{job},
+            </if>
+            <if test="mgr != null">
+                MGR = #{mgr},
+            </if>
+            <if test="sal != null">
+                SAL = #{sal},
+            </if>
+            <if test="comm != null">
+                COMM = #{comm},
+            </if>
+            <if test="deptno != null">
+                DEPTNO = #{deptno},
+            </if>
+        </set>
+        where EMPNO = #{empno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from cloudwise.emp where EMPNO = #{empno}
+    </delete>
+
+</mapper>

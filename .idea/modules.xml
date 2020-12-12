@@ -17,6 +17,9 @@
       <module fileurl="file://$PROJECT_DIR$/cloudwise-20201208-work/cloudwise-20201208-work.iml" filepath="$PROJECT_DIR$/cloudwise-20201208-work/cloudwise-20201208-work.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloudwise-20201209/cloudwise-20201209.iml" filepath="$PROJECT_DIR$/cloudwise-20201209/cloudwise-20201209.iml" />
       <module fileurl="file://$PROJECT_DIR$/cloudwise-20201209-work/cloudwise-20201209-work.iml" filepath="$PROJECT_DIR$/cloudwise-20201209-work/cloudwise-20201209-work.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201210/cloudwise-20201210.iml" filepath="$PROJECT_DIR$/cloudwise-20201210/cloudwise-20201210.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201210-ssm/cloudwise-20201210-ssm.iml" filepath="$PROJECT_DIR$/cloudwise-20201210-ssm/cloudwise-20201210-ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloudwise-20201211-test/cloudwise-20201211-test.iml" filepath="$PROJECT_DIR$/cloudwise-20201211-test/cloudwise-20201211-test.iml" />
     </modules>
   </component>
 </project>
