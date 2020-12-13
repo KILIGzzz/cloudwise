@@ -8,6 +8,7 @@ import com.Ivan.service.EmpService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -97,5 +98,13 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public List<Dept> findDept() {
         return empDao.findDept();
+    }
+
+    @Override
+    public List<EmpDept> findByCondition(Integer empno, String ename) {
+        Map<String,Object> map = new HashMap<>();
+        map.put("empno",empno);
+        map.put("ename",ename);
+        return empDao.findByCondition(map);
     }
 }

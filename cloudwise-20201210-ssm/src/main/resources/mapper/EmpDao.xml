@@ -82,7 +82,18 @@
     <select id="findDept" resultType="com.Ivan.entity.Dept">
         select deptid,dname from dept group by dname;
     </select>
-
+    <!--条件查询-->
+    <select id="findByCondition" parameterType="map" resultType="com.Ivan.entity.EmpDept">
+        select e.*,d.dname from emp e inner join dept d on e.DEPTNO = d.deptid
+        <where>
+            <if test="empno != null and empno != ''">
+                and EMPNO = #{empno}
+            </if>
+            <if test="ename != null and ename != ''">
+                and ENAME like "%"#{ename}"%"
+            </if>
+        </where>
+    </select>
 
 
     <!--通过主键修改数据-->

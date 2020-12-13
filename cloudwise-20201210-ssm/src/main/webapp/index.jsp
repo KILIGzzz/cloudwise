@@ -12,14 +12,60 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/layui/css/layui.css">
     <script src="${pageContext.request.contextPath}/static/layui/layui.js"></script>
     <script src="${pageContext.request.contextPath}/static/jquery-3.4.1/jquery-3.4.1.js"></script>
+    <style>
+        .form {
+            width: 40%;
+            height: 5%;
+            float: left;
+        }
+
+        #div1 {
+            float: left;
+        }
+
+        #div2 {
+            float: right;
+        }
+
+        #div3 {
+            float: left;
+        }
+
+        #div4 {
+            float: right;
+        }
+    </style>
 </head>
 <body>
 <table id="demo" lay-filter="test">
 </table>
-<div style="margin-left: 28%">
-    <a href="${pageContext.request.contextPath}/emp/toAdd.do">
-        <button class="layui-btn layui-btn layui-btn-normal" lay-event="add">添加</button>
-    </a>
+<div style="width: 90%">
+    <form class="form" method="post" action="${pageContext.request.contextPath}/emp/findByCondition.do">
+        <div id="div3">
+            <div id="div1">
+                <label class="layui-form-label">人员编号</label>
+                <div class="layui-input-block">
+                    <input id="empno" type="text" name="empno" placeholder="请输入人员编号"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div id="div2">
+                <label class="layui-form-label">人员姓名</label>
+                <div class="layui-input-block">
+                    <input id="ename" type="text" name="ename"  placeholder="请输入人员姓名"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div id="div4">
+            <input type="submit" class="layui-btn layui-btn layui-btn-normal" value="查询">
+        </div>
+    </form>
+    <div style="margin-left: 45%">
+        <a href="${pageContext.request.contextPath}/emp/toAdd.do">
+            <button class="layui-btn layui-btn layui-btn-normal" lay-event="add">添加</button>
+        </a>
+    </div>
 </div>
 </body>
 <%--按钮--%>
@@ -34,7 +80,7 @@
         table.render({
             elem: '#demo'
             , height: 400
-            , url: '${pageContext.request.contextPath}/emp/findAll.do' //数据接口
+            , url: '${pageContext.request.contextPath}/emp/findAll.do?empno=${empno}&ename=${ename}' //数据接口
             , page: true //开启分页
             , limit: 5
             , limits: [5, 10, 15, 20, 25, 30]

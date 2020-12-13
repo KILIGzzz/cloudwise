@@ -3,6 +3,7 @@ package com.Ivan.service;
 import com.Ivan.entity.Dept;
 import com.Ivan.entity.Emp;
 import com.Ivan.entity.EmpDept;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -77,4 +78,14 @@ public interface EmpService {
      * @return java.util.List<java.lang.String>
      */
     List<Dept> findDept();
+
+    /**
+     * @create by: IvanZ
+     * @description : 条件查询
+     * @create time: 2020/12/13 21:03
+     * @param empno:
+     * @param ename:
+     * @return java.util.List<com.Ivan.entity.Dept>
+     */
+    List<EmpDept> findByCondition(Integer empno, String ename);
 }

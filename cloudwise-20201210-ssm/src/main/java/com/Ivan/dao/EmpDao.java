@@ -100,4 +100,14 @@ public interface EmpDao {
      * @return java.util.List<java.lang.String>
      */
     List<Dept> findDept();
+
+    /**
+     * @create by: IvanZ
+     * @description : 条件查询
+     * @create time: 2020/12/13 21:03
+     * @param empno:
+ * @param ename:
+     * @return java.util.List<com.Ivan.entity.EmpDept>
+     */
+    List<EmpDept> findByCondition(Map<String,Object> map);
 }
