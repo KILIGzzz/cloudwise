@@ -72,7 +72,7 @@ public class Student implements Comparable<Student>{
 
         //随机传入LocalDateTime参数
         for (int i = 0; i < students.length; i++) {
-            students[i] = new Student("Ivan"+i,18,LocalDateTime.parse("2020-11-24T08:"+IvanUtils.getRandomMin()+":13"),LocalDateTime.parse("2020-11-24T20:"+IvanUtils.getRandomMin()+":13"));
+            students[i] = new Student("Ivan"+i,18,LocalDateTime.parse("2020-11-24T08:"+ com.cloudwise.util.IvanUtils.getRandomMin()+":13"),LocalDateTime.parse("2020-11-24T20:"+ com.cloudwise.util.IvanUtils.getRandomMin()+":13"));
         }
 
         System.out.println("排序前：");

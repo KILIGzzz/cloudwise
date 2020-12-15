@@ -1,3 +1,4 @@
+package com.cloudwise.util;
 
 import java.util.Random;
 
@@ -30,4 +31,15 @@ public class IvanUtils {
         return str;
     }
 
+    /**
+     * @create by: IvanZ
+     * @description : 计算开始位置offset
+     * @create time: 2020/12/14 14:41
+     * @param page:
+ * @param limit:
+     * @return int
+     */
+    public static int getOffset(Integer page,Integer limit){
+        return (page-1)*limit;
+    }
 }

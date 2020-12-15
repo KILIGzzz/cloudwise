@@ -93,7 +93,7 @@
                 , {field: 'hiredate', title: '人员入职日期', width: 200}
                 , {field: 'sal', title: '人员工资', width: 120}
                 , {field: 'comm', title: '人员奖金', width: 120}
-                , {field: 'dname', title: '人员部门', width: 120}
+                , {field: 'deptno', title: '人员部门', width: 120}
                 //添加按钮
                 , {field: '', title: '操作', width: 135, toolbar: "#bar"}
             ]]

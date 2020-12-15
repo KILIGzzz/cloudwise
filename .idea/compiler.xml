@@ -11,9 +11,10 @@
         <module name="cloudwise-20201208" />
         <module name="cloudwise-20201209-work" />
         <module name="cloudwise-20201211-test" />
-        <module name="cloudwise-20201210" />
+        <module name="cloudwise-20201214-work" />
         <module name="cloudwise-20201208-work" />
         <module name="cloudwise-20201210-ssm" />
+        <module name="cloudwise-20201210" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -25,7 +26,13 @@
       <module name="cloudwise-20201210-ssm" target="1.8" />
       <module name="cloudwise-20201211" target="1.8" />
       <module name="cloudwise-20201211-test" target="1.7" />
+      <module name="cloudwise-20201214-work" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloudwise-20201214-work" options="-parameters" />
+    </option>
   </component>
   <component name="TypeScriptCompiler">
     <option name="recompileOnChanges" value="true" />

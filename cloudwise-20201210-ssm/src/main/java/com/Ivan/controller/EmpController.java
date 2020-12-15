@@ -42,7 +42,6 @@ public class EmpController {
     @ResponseBody
     public ReturnBean findAllEmp(Integer empno, String ename, HttpServletRequest req) {
         if (empno != null || !"".equals(ename)) {
-            System.out.println("条件");
             List<EmpDept> emps = empService.findByCondition(empno, ename);
             ReturnBean returnBean = new ReturnBean();
             returnBean.setCode(0);
