@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示所有人员信息</title>
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <script src="/layui/layui.js"></script>
+</head>
+<body>
+<table id="demo" lay-filter="test">
+</table>
+</body>
+    <form class="layui-form" action="" id="saveUserForm" style="display: none;margin-right: 40px;margin-top: 20px"  >
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员编号</label>
+            <div class="layui-input-block">
+                <input type="text" name="empno" required  lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员姓名</label>
+            <div class="layui-input-block">
+                <input type="text" name="ename" required  lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员工作</label>
+            <div class="layui-input-block">
+                <select name="job" lay-verify="required">
+                    <option value="ANALYST">ANALYST</option>
+                    <option value="CLERK">CLERK</option>
+                    <option value="MANAGER">MANAGER</option>
+                    <option value="PRESIDENT">PRESIDENT</option>
+                    <option value="SALESMAN">SALESMAN</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员上级</label>
+            <div class="layui-input-block">
+                <input type="text" name="mgr" required  lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <!--    无用值-->
+        <input type="hidden" name="hiredate" value="aaaa">
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员工资</label>
+            <div class="layui-input-block">
+                <input type="text" name="sal" required  lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员奖金</label>
+            <div class="layui-input-block">
+                <input type="text" name="comm" required  lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">人员部门</label>
+            <div class="layui-input-block">
+                <select name="deptno" lay-verify="required">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="saveUserFilter">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+
+<form class="layui-form" action="" id="updateUserForm" style="display: none;margin-right: 40px;margin-top: 20px"  >
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员编号</label>
+        <div class="layui-input-block">
+            <input type="text" name="empno" required readonly="readonly"  lay-verify="required"  autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员姓名</label>
+        <div class="layui-input-block">
+            <input type="text" name="ename" required  lay-verify="required"  autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员工作</label>
+        <div class="layui-input-block">
+            <select name="job" lay-verify="required">
+                <option value="ANALYST">ANALYST</option>
+                <option value="CLERK">CLERK</option>
+                <option value="MANAGER">MANAGER</option>
+                <option value="PRESIDENT">PRESIDENT</option>
+                <option value="SALESMAN">SALESMAN</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员上级</label>
+        <div class="layui-input-block">
+            <input type="text" name="mgr" required  lay-verify="required"  autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <!--    无用值-->
+    <input type="hidden" name="hiredate" value="aaaa">
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员工资</label>
+        <div class="layui-input-block">
+            <input type="text" name="sal" required  lay-verify="required"  autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员奖金</label>
+        <div class="layui-input-block">
+            <input type="text" name="comm" required  lay-verify="required"  autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">人员部门</label>
+        <div class="layui-input-block">
+            <select name="deptno" lay-verify="required">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="updateUserFilter">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<script type="text/html" id="toolbarDemo">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add">添加</button>
+        <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="delAll">删除</button>
+    </div>
+</script>
+<!--按钮-->
+<script type="text/html" id="bar">
+    <button class="layui-btn layui-btn-sm" lay-event="edit">编辑</button>
+    <button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="del">删除</button>
+</script>
+<script>
+    layui.use(['table','layer','jquery','form'], function () {
+        var table = layui.table;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+        var form = layui.form;
+        //第一个实例
+        var myTable = table.render({
+            elem: '#demo'
+            , height: 400
+            , url: '/emp/findAll' //数据接口
+            , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , page: true //开启分页
+            , limit: 5
+            , limits: [5, 10, 15, 20, 25, 30]
+            , cols: [
+                [ //表头
+                    {type: 'checkbox', fixed: 'left'}
+                    , {field: 'empno', title: '人员编号', width: 100, sort: true}
+                    , {field: 'ename', title: '人员姓名', width: 120}
+                    , {field: 'job', title: '人员工作', width: 160, sort: true}
+                    , {field: 'mgr', title: '人员上级', width: 100}
+                    , {field: 'hiredate', title: '人员入职日期', width: 200}
+                    , {field: 'sal', title: '人员工资', width: 120}
+                    , {field: 'comm', title: '人员奖金', width: 120}
+                    , {field: 'deptno', title: '人员部门', width: 120}
+                    //添加按钮
+                    , {field: '', title: '操作', width: 135, toolbar: "#bar"}
+                ]]
+        });
+
+        //头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id)
+                ,data = checkStatus.data;
+            switch(obj.event){
+                case 'add':
+                    layer.open({
+                        title: '添加用户',
+                        type: 1,
+                        area: ['500px', '500px'],
+                        content: $("#saveUserForm")//这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                    });
+                    break;
+                case 'delAll':
+                    layer.confirm('真的删除行么', function(index) {
+                        for (let i = 0; i <data.length; i++) {
+                            $.ajax({
+                                url: "/emp/deleteById",
+                                type: "POST",
+                                dataType: "JSON",
+                                data: {empno: data[i].empno},
+                                success: function (ret) {
+                                    if (ret.code == 0) {
+                                        //刷新表格数据
+                                        myTable.reload({});
+                                        layer.msg(ret.msg, {icon: 6});
+                                    } else {
+                                        layer.msg(ret.msg, {icon: 5});
+                                    }
+                                }
+                            })
+                        }
+                        layer.close(index);
+                    })
+                break;
+            };
+        });
+
+        //监听行工具事件
+        table.on('tool(test)', function(obj){
+            var data = obj.data
+            //console.log(obj)
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    $.ajax({
+                        url:"/emp/deleteById",
+                        type: "POST",
+                        dataType:"JSON",
+                        data:{empno:data.empno},
+                        success:function (ret) {
+                            if(ret.code==0){
+                                //刷新表格数据
+                                myTable.reload({
+                                });
+                                layer.msg(ret.msg,{icon: 6});
+                            }else
+                            {
+                                layer.msg(ret.msg,{icon: 5});
+                            }
+
+                        }
+                    })
+                    layer.close(index);
+                });
+            } else if(obj.event === 'edit'){
+                // layer.prompt({
+                //     formType: 2
+                //     ,value: data.email
+                // }, function(value, index){
+                //     obj.update({
+                //         email: value
+                //     });
+                //     layer.close(index);
+                // });
+                layer.open({
+                    title: '添加用户',
+                    type: 1,
+                    area: ['500px', '500px'],
+                    content: $("#updateUserForm"),//这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                    success:function () {
+                        // console.log(index)
+                        //将表格值放入表单中
+                        $("input[name=empno]").val(data.empno)
+                        $("input[name=ename]").val(data.ename)
+                        var $job = $("select[name=job] option");
+                        for (let i = 0; i <$job.length ; i++) {
+                            if ($job[i].value===data.job){
+                                $job[i].setAttribute("selected",true)
+                            }
+                        }
+                        $("input[name=mgr]").val(data.mgr)
+                        $("input[name=sal]").val(data.sal)
+                        $("input[name=comm]").val(data.comm)
+                        var $deptno = $("select[name=deptno] option");
+                        for (let i = 0; i <$deptno.length ; i++) {
+                            if ($deptno[i].value==data.deptno){
+                                $deptno[i].setAttribute("selected",true)
+                            }
+                        }
+                        //表单重新渲染
+                        form.render('select');
+                    }
+                });
+            }
+        });
+
+        //add表单的提交
+        form.on('submit(saveUserFilter)', function(data){
+            console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            //提交表单数据
+            $.ajax({
+                url:"/emp/saveUser",
+                type: "POST",
+                dataType:"JSON",
+                data:data.field,
+                success:function (ret) {
+                    if(ret.code==0){
+                        //关闭对话框
+                        layer.closeAll();
+                        //刷新表格数据
+                        myTable.reload({
+                            page: {
+                                curr: 1 //重新从第 1 页开始
+                            }
+                        });
+                        layer.msg(ret.msg,{icon: 6});
+                    }else
+                    {
+                        layer.msg(ret.msg,{icon: 5});
+                    }
+                }
+            })
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+
+        //update表单的提交
+        form.on('submit(updateUserFilter)', function(data){
+            console.log(data.field) //当前容器的全部表单字段，名值对形式：{name: value}
+            //提交表单数据
+            $.ajax({
+                url:"/emp/updateUser",
+                type: "POST",
+                dataType:"JSON",
+                data:data.field,
+                success:function (ret) {
+                    if(ret.code==0){
+                        //关闭对话框
+                        layer.closeAll();
+                        //刷新表格数据
+                        myTable.reload({
+                        });
+                        layer.msg(ret.msg,{icon: 6});
+                    }else
+                    {
+                        layer.msg(ret.msg,{icon: 5});
+                    }
+                }
+            })
+            return false; //阻止表单跳转。如果需要表单跳转，去掉这段即可。
+        });
+    });
+</script>
+</html>
